@@ -9,12 +9,12 @@ const users = [
     },
     {
         name : 'Jane',
-        avatar : "https://randomuser.me/api/portraits/women/12.jpg",
+        avatar : "https://randomuser.me/api/portraits/women/16.jpg",
         online : false,
     },
     {
         name : 'David',
-        avatar : "https://randomuser.me/api/portraits/women/33.jpg",
+        avatar : "https://randomuser.me/api/portraits/men/33.jpg",
         online : false,
     },
     {
@@ -24,13 +24,15 @@ const users = [
     },
     {
         name : 'Edouard',
-        avatar : "https://randomuser.me/api/portraits/women/15.jpg",
+        avatar : "https://randomuser.me/api/portraits/men/28.jpg",
         online : true,
     }
 ];
 
 const ContactList = () => {
-    return users.map(user => Contact(user));
+    return users.map(user => {
+        return <Contact user = {user}/>;
+      });
 };
 
 

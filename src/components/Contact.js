@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-
+import './Contact.css';
 
 
 class Contact extends React.Component{
+   
     render() {
+        console.log(this.props)
         return (
-                <div className="Contact">
-                    <img className='avatar' src={this.props.avatar} alt="avatar"/>
-                    <div> 
-                        <p className="name">{this.props.name}</p>
-                        <div className="status">
-                            <p className="status-text">{this.props.online ? "online" : "offline" }</p>
-                            <div className={this.props.online ? "status-online" : "status-offline"}></div>
-                        </div>
-                    </div>
+            
+            
+            <div className="Contact">
+                <div className="avatar"><img src={this.props.user.avatar} alt="avatar" className="avatar"/></div>
+                <div className = "status">
+                    <cite className = {this.props.user.online ? "status-online" : "status-offline"}></cite>
+                    <cite className = "status-text">
+                        {this.props.user.status ? "online" : "offline"}
+                    </cite>
+                    <div className="name">{this.props.user.name}</div>
                 </div>
+            </div>
+       
+                
         );
     }
 
